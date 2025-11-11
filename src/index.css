@@ -11,26 +11,26 @@ All colors MUST be HSL.
     --background: 222 47% 5%;
     --foreground: 210 40% 98%;
 
-    --card: 220 40% 12%;
+    --card: 222 47% 8%;
     --card-foreground: 210 40% 98%;
 
     --popover: 220 40% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 207 100% 64%;
+    --primary: 207 90% 61%;
     --primary-foreground: 222 47% 5%;
     --primary-glow: 207 100% 75%;
 
     --secondary: 220 40% 15%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 30% 20%;
+    --muted: 220 30% 18%;
     --muted-foreground: 215 20% 65%;
 
     --accent: 25 95% 53%;
     --accent-foreground: 222 47% 5%;
 
-    --cyan: 190 70% 50%;
+    --cyan: 190 80% 50%;
     --cyan-foreground: 222 47% 5%;
 
     --destructive: 0 84.2% 60.2%;
@@ -38,16 +38,17 @@ All colors MUST be HSL.
 
     --border: 220 20% 25%;
     --input: 220 20% 20%;
-    --ring: 207 100% 64%;
+    --ring: 207 90% 61%;
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(207 100% 64%), hsl(207 100% 75%));
-    --gradient-radial: radial-gradient(ellipse at center, hsl(207 100% 64% / 0.15), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(207 90% 61%), hsl(207 100% 75%));
+    --gradient-radial: radial-gradient(ellipse at center, hsl(207 90% 61% / 0.2), transparent 70%);
     --gradient-hero: linear-gradient(180deg, hsl(222 47% 5%), hsl(220 40% 8%));
+    --gradient-card: linear-gradient(135deg, hsl(207 90% 61% / 0.1) 0%, hsl(190 80% 50% / 0.05) 100%);
     
-    --shadow-glow: 0 0 40px hsl(207 100% 64% / 0.3);
-    --shadow-soft: 0 10px 30px -10px hsl(207 100% 64% / 0.2);
+    --shadow-glow: 0 0 60px hsl(207 90% 61% / 0.4);
+    --shadow-soft: 0 10px 40px -10px hsl(207 90% 61% / 0.3);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -59,6 +60,28 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

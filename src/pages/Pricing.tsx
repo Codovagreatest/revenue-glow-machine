@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Hero } from "@/components/ui/hero-1";
 import { PricingCard } from "@/components/PricingCard";
 import { Link } from "react-router-dom";
 import { Zap, ArrowLeft, Check } from "lucide-react";
@@ -26,26 +27,21 @@ const Pricing = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 md:py-32">
+      <Hero
+        eyebrow="Transparent Pricing • No Hidden Fees"
+        title="Choose your plan"
+        subtitle="Start with a proven pilot, scale when you see results. All plans include setup, training, and our 3x ROI guarantee."
+        ctaLabel="Start Your Pilot"
+        ctaHref="/pilot"
+      />
+
+      {/* Pricing Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <Button variant="ghost" className="mb-8" asChild>
-            <Link to="/">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Link>
-          </Button>
-          
-          <div className="mb-16 text-center">
+          <div className="mb-12 text-center">
             <div className="mb-4 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-bold text-accent animate-pulse-glow">
               LIMITED: Only 10 spots this month
             </div>
-            <h1 className="mb-6 text-5xl font-bold text-foreground md:text-6xl">
-              Simple, <span className="text-primary">transparent</span> pricing
-            </h1>
-            <p className="mx-auto max-w-3xl text-xl text-muted-foreground">
-              Start with a proven pilot, scale when you see results. All plans include setup, 
-              training, and our 3x ROI guarantee.
-            </p>
           </div>
 
           {/* Pricing Cards */}
@@ -116,7 +112,7 @@ const Pricing = () => {
 
           {/* Guarantee Section */}
           <div className="mt-20">
-            <div className="mx-auto max-w-3xl rounded-3xl border border-primary/30 bg-gradient-radial p-12 text-center">
+            <div className="mx-auto max-w-3xl rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm p-12 text-center shadow-glow">
               <h2 className="mb-6 text-3xl font-bold text-foreground">Our 3x ROI Guarantee</h2>
               <p className="mb-8 text-lg text-muted-foreground">
                 If we don't make you at least 3x your investment in the first 30 days, 

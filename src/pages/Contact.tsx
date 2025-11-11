@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Hero } from "@/components/ui/hero-1";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -126,7 +127,7 @@ const Contact = () => {
             </div>
 
             {/* Right Column - Form */}
-            <div className="rounded-3xl border border-border bg-card/50 p-8 backdrop-blur-sm lg:p-12">
+            <div className="rounded-3xl border border-border bg-gradient-card backdrop-blur-sm p-8 shadow-glow lg:p-12">
               <div className="mb-8">
                 <h2 className="mb-2 text-3xl font-bold text-foreground">Send us a message</h2>
                 <p className="text-muted-foreground">

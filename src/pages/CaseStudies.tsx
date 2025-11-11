@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Hero } from "@/components/ui/hero-1";
 import { Link } from "react-router-dom";
 import { Zap, ArrowLeft, TrendingUp, Clock, BarChart3 } from "lucide-react";
 
@@ -25,29 +26,21 @@ const CaseStudies = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 md:py-32">
-        <div className="container mx-auto px-4">
-          <Button variant="ghost" className="mb-8" asChild>
-            <Link to="/">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Link>
-          </Button>
-          
-          <div className="mb-16 text-center">
-            <h1 className="mb-6 text-5xl font-bold text-foreground md:text-6xl">
-              Real Results from <span className="text-primary">Real Businesses</span>
-            </h1>
-            <p className="mx-auto max-w-3xl text-xl text-muted-foreground">
-              See how businesses like yours are capturing more revenue, reducing costs, 
-              and never missing a lead again with our 24/7 AI automation.
-            </p>
-          </div>
+      <Hero
+        eyebrow="Real Results • Real Businesses"
+        title="Proven success stories"
+        subtitle="See how businesses like yours are capturing more revenue, reducing costs, and never missing a lead again with our 24/7 AI automation."
+        ctaLabel="Start Your Pilot"
+        ctaHref="/pilot"
+      />
 
-          {/* Case Study Cards */}
+      {/* Case Studies Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          {/* Case Study Cards with Premium Styling */}
           <div className="space-y-12">
             {/* Case Study 1 */}
-            <div className="grid gap-8 rounded-3xl border border-primary/30 bg-gradient-radial p-8 md:grid-cols-2 md:p-12">
+            <div className="grid gap-8 rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm p-8 shadow-glow md:grid-cols-2 md:p-12">
               <div className="space-y-6">
                 <div>
                   <div className="mb-2 inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
@@ -276,7 +269,7 @@ const CaseStudies = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-20 rounded-3xl border border-primary/30 bg-gradient-radial p-12 text-center">
+          <div className="mt-20 rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm p-12 text-center shadow-glow">
             <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
               Ready to see similar results?
             </h2>

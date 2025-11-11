@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ServiceCard } from "@/components/ServiceCard";
+import { Hero } from "@/components/ui/hero-1";
+import { GradientCard } from "@/components/ui/gradient-card";
 import { Link } from "react-router-dom";
-import { Zap, ArrowLeft } from "lucide-react";
-import chatIcon from "@/assets/chat-icon.jpg";
-import voiceIcon from "@/assets/voice-icon.jpg";
-import webVoiceIcon from "@/assets/web-voice-icon.jpg";
+import { Zap, ArrowLeft, MessageSquare, Phone, Globe } from "lucide-react";
 
 const Services = () => {
   return (
@@ -29,73 +27,50 @@ const Services = () => {
       </nav>
 
       {/* Hero Section */}
+      <Hero
+        eyebrow="Complete AI Automation Suite"
+        title="Transform support into revenue"
+        subtitle="AI-powered tools that capture, qualify, and convert leads 24/7 across every channel."
+        ctaLabel="Start Your Pilot"
+        ctaHref="/pilot"
+      />
+
+      {/* Services Grid with Premium Cards */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
-          <Button variant="ghost" className="mb-8" asChild>
-            <Link to="/">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Link>
-          </Button>
-          
           <div className="mb-16 text-center">
-            <h1 className="mb-6 text-5xl font-bold text-foreground md:text-6xl">
-              Our <span className="text-primary">Services</span>
-            </h1>
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+              Choose your <span className="bg-gradient-primary bg-clip-text text-transparent">automation</span>
+            </h2>
             <p className="mx-auto max-w-3xl text-xl text-muted-foreground">
-              Complete AI automation suite to capture, qualify, and convert leads 24/7. 
-              Each service integrates seamlessly to create a revenue-generating machine.
+              Each service integrates seamlessly to create a revenue-generating machine
             </p>
           </div>
 
           {/* Services Grid */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <ServiceCard
-              icon={chatIcon}
+            <GradientCard
+              icon={<MessageSquare className="h-6 w-6 text-primary" />}
               title="AI Chat Suite"
-              description="24/7 DM handling across Instagram, WhatsApp, and Telegram that sounds like you and books in real time."
-              features={[
-                "Multi-channel bot deployment",
-                "Custom FAQ & tone training",
-                "Decision-tree qualification (budget, timeframe, urgency)",
-                "Instant calendar booking with invites & SMS reminders",
-                "Human handover rules & priority escalation",
-                "CRM integration via webhooks"
-              ]}
-              ctaText="Start Chat Pilot (14 days)"
-              onCTAClick={() => window.location.href = "/pilot"}
+              description="24/7 DM handling across Instagram, WhatsApp, and Telegram that sounds like you and books in real time. Multi-channel bot deployment with custom FAQ & tone training, decision-tree qualification, instant calendar booking with invites & SMS reminders, human handover rules & priority escalation, and CRM integration via webhooks."
+              linkText="Start Chat Pilot (14 days)"
+              linkHref="/pilot"
             />
             
-            <ServiceCard
-              icon={voiceIcon}
+            <GradientCard
+              icon={<Phone className="h-6 w-6 text-primary" />}
               title="AI Voice Caller"
-              description="Human-like voice rep that confirms appointments, follows up with warm leads, and converts on your behalf."
-              features={[
-                "Outbound autodial for warm leads within hours",
-                "Inbound after-hours call handling",
-                "Real voice TTS + STT with conversational AI",
-                "Appointment confirmation flow automation",
-                "Recording transcripts & sentiment analysis",
-                "Fallback SMS if call unsuccessful"
-              ]}
-              ctaText="Book Voice Demo"
-              onCTAClick={() => window.location.href = "/contact"}
+              description="Human-like voice rep that confirms appointments, follows up with warm leads, and converts on your behalf. Outbound autodial for warm leads within hours, inbound after-hours call handling, real voice TTS + STT with conversational AI, appointment confirmation flow automation, recording transcripts & sentiment analysis, and fallback SMS if call unsuccessful."
+              linkText="Book Voice Demo"
+              linkHref="/contact"
             />
             
-            <ServiceCard
-              icon={webVoiceIcon}
+            <GradientCard
+              icon={<Globe className="h-6 w-6 text-primary" />}
               title="Website Voice Agent"
-              description="Convert passive visitors and form-abandoners into booked calls with proactive voice engagement."
-              features={[
-                "On-page waveform widget integration",
-                "Proactive visitor intercept for idle users",
-                "Form abandonment rescue triggers",
-                "Seamless handoff to calendar booking",
-                "Real-time analytics on engagement",
-                "Custom voice prompts & branding"
-              ]}
-              ctaText="Add Voice to Site"
-              onCTAClick={() => window.location.href = "/contact"}
+              description="Convert passive visitors and form-abandoners into booked calls with proactive voice engagement. On-page waveform widget integration, proactive visitor intercept for idle users, form abandonment rescue triggers, seamless handoff to calendar booking, real-time analytics on engagement, and custom voice prompts & branding."
+              linkText="Add Voice to Site"
+              linkHref="/contact"
             />
           </div>
 
@@ -137,7 +112,7 @@ const Services = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-20 rounded-3xl border border-primary/30 bg-gradient-radial p-12 text-center">
+          <div className="mt-20 rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm p-12 text-center shadow-glow">
             <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
               Ready to automate your lead flow?
             </h2>

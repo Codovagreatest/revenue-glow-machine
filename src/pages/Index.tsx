@@ -1,4 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Hero } from "@/components/ui/hero-1";
+import { GradientCard } from "@/components/ui/gradient-card";
+import { FeatureCard, CardHeading, CircularUI } from "@/components/ui/features-10";
 import { ServiceCard } from "@/components/ServiceCard";
 import { PricingCard } from "@/components/PricingCard";
 import { StatsCounter } from "@/components/StatsCounter";
@@ -8,6 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { 
@@ -20,9 +24,10 @@ import {
   TrendingUp,
   Shield,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  Bot,
+  Sparkles
 } from "lucide-react";
-import heroImage from "@/assets/hero-planet.jpg";
 import chatIcon from "@/assets/chat-icon.jpg";
 import voiceIcon from "@/assets/voice-icon.jpg";
 import webVoiceIcon from "@/assets/web-voice-icon.jpg";
@@ -67,63 +72,14 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 md:py-32">
-        <div className="absolute inset-0 bg-gradient-radial opacity-50" />
-        
-        <div className="container relative z-10 mx-auto px-4">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="animate-fade-in space-y-8">
-              <div className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-                Trusted by 50+ brands
-              </div>
-              
-              <h1 className="text-5xl font-bold leading-tight text-foreground md:text-6xl lg:text-7xl">
-                We make your nights{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  profitable
-                </span>
-              </h1>
-              
-              <p className="text-xl text-muted-foreground md:text-2xl">
-                Bookings while your competitors sleep. AI chat, voice, and web agents that qualify, 
-                book, and call 24/7 — so you capture revenue around the clock.
-              </p>
-              
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button variant="hero" size="lg" className="text-lg" asChild>
-                  <Link to="/pilot">
-                    Get Started — Book 21-Day Pilot
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg" asChild>
-                  <Link to="/contact">See a Live Demo</Link>
-                </Button>
-              </div>
-              
-              <div className="flex items-center space-x-6 pt-4">
-                <div className="flex -space-x-2">
-                  <div className="h-10 w-10 rounded-full border-2 border-background bg-primary/20" />
-                  <div className="h-10 w-10 rounded-full border-2 border-background bg-cyan/20" />
-                  <div className="h-10 w-10 rounded-full border-2 border-background bg-accent/20" />
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Join 50+ businesses capturing after-hours revenue
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative animate-float">
-              <img 
-                src={heroImage} 
-                alt="AI Analytics Dashboard" 
-                className="rounded-2xl shadow-glow"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with New Premium Component */}
+      <Hero 
+        eyebrow="AI Automation That Never Sleeps"
+        title="We make your nights profitable"
+        subtitle="Never miss a lead again. AI chat, voice, and web agents that qualify, book, and call 24/7 — so you capture revenue around the clock, lower CAC, and keep your pipeline warm."
+        ctaLabel="Book 21-Day Pilot"
+        ctaHref="/pilot"
+      />
 
       {/* Stats Section */}
       <section className="border-y border-border/50 bg-card/30 py-16 backdrop-blur-sm">
@@ -287,12 +243,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section with Premium Gradient Cards */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
-              Automation that <span className="text-primary">converts</span>
+              Automation that <span className="bg-gradient-primary bg-clip-text text-transparent">converts</span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               AI-powered tools that work 24/7 to capture, qualify, and convert leads 
@@ -301,52 +257,120 @@ const Index = () => {
           </div>
           
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <ServiceCard
-              icon={chatIcon}
+            <GradientCard
+              icon={<MessageSquare className="h-6 w-6 text-primary" />}
               title="AI Chat Suite"
-              description="24/7 DM handling that sounds like you and books in real time."
-              features={[
-                "Multi-channel bots (Instagram, WhatsApp, Telegram)",
-                "Decision-tree qualification",
-                "Instant calendar booking",
-                "Human handover rules"
-              ]}
-              ctaText="Start Chat Pilot"
-              onCTAClick={() => window.location.href = "/pilot"}
+              description="24/7 DM handling across Instagram, WhatsApp, and Telegram. Multi-channel bots with decision-tree qualification, instant calendar booking, and human handover rules. Turn every conversation into a booking opportunity."
+              linkText="Start Chat Pilot"
+              linkHref="/pilot"
             />
             
-            <ServiceCard
-              icon={voiceIcon}
+            <GradientCard
+              icon={<Phone className="h-6 w-6 text-primary" />}
               title="AI Voice Caller"
-              description="A human-like voice rep that confirms, follows-up, and converts."
-              features={[
-                "Outbound autodial for warm leads",
-                "Inbound after-hours handling",
-                "Real voice TTS + STT",
-                "Recording transcripts & sentiment"
-              ]}
-              ctaText="Book Voice Demo"
-              onCTAClick={() => window.location.href = "/contact"}
+              description="Human-like voice rep that confirms, follows-up, and converts. Outbound autodial for warm leads, inbound after-hours handling, real voice TTS + STT, and sentiment analysis. Never miss a call again."
+              linkText="Book Voice Demo"
+              linkHref="/contact"
             />
             
-            <ServiceCard
-              icon={webVoiceIcon}
+            <GradientCard
+              icon={<Globe className="h-6 w-6 text-primary" />}
               title="Website Voice Agent"
-              description="Turn passive visitors and form-abandoners into booked calls."
-              features={[
-                "On-page waveform widget",
-                "Proactive visitor intercept",
-                "Form abandonment rescue",
-                "Seamless calendar handoff"
-              ]}
-              ctaText="Add Voice to Site"
-              onCTAClick={() => window.location.href = "/contact"}
+              description="Convert passive visitors into booked calls. On-page waveform widget with proactive visitor intercept, form abandonment rescue, and seamless calendar handoff. Capture leads before they bounce."
+              linkText="Add Voice to Site"
+              linkHref="/contact"
             />
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Advanced Features Section with Premium Component */}
+      <section className="border-y border-border/50 bg-card/30 py-20 backdrop-blur-sm md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+              Enterprise-grade <span className="bg-gradient-primary bg-clip-text text-transparent">automation</span>
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Advanced tracking, scheduling, and analytics built for scale
+            </p>
+          </div>
+
+          <div className="mx-auto max-w-5xl">
+            <div className="grid gap-4 lg:grid-cols-2">
+              <FeatureCard>
+                <CardHeader className="pb-3">
+                  <CardHeading
+                    icon={Clock}
+                    title="Real-time Lead Tracking"
+                    description="Instantly locate and track every lead across all channels with advanced monitoring"
+                  />
+                </CardHeader>
+
+                <CardContent>
+                  <div className="relative mb-6 border-t border-dashed">
+                    <div className="absolute inset-0 [background:radial-gradient(125%_125%_at_50%_0%,transparent_40%,hsl(var(--muted)),hsl(var(--background))_125%)]"></div>
+                    <div className="aspect-[76/59] flex items-center justify-center p-8">
+                      <div className="relative">
+                        <div className="absolute inset-0 animate-pulse-glow rounded-full bg-primary/20 blur-xl"></div>
+                        <BarChart3 className="relative h-32 w-32 text-primary" />
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </FeatureCard>
+
+              <FeatureCard>
+                <CardHeader className="pb-3">
+                  <CardHeading
+                    icon={Bot}
+                    title="AI-Powered Scheduling"
+                    description="Smart scheduling with automated reminders and intelligent booking optimization"
+                  />
+                </CardHeader>
+
+                <CardContent>
+                  <div className="relative mb-6">
+                    <div className="absolute -inset-6 [background:radial-gradient(50%_50%_at_75%_50%,transparent,hsl(var(--background))_100%)]"></div>
+                    <div className="aspect-[76/59] flex items-center justify-center border border-primary/20 rounded-lg bg-gradient-to-br from-primary/5 to-transparent p-8">
+                      <Sparkles className="h-32 w-32 text-primary animate-pulse-glow" />
+                    </div>
+                  </div>
+                </CardContent>
+              </FeatureCard>
+
+              <FeatureCard className="p-6 lg:col-span-2">
+                <p className="mx-auto my-6 max-w-md text-balance text-center text-2xl font-semibold text-foreground">
+                  Multi-channel orchestration with seamless handoffs and intelligent routing
+                </p>
+
+                <div className="flex justify-center gap-6 overflow-hidden">
+                  <CircularUI
+                    label="Chat Bot"
+                    circles={[{ pattern: 'primary' }, { pattern: 'border' }]}
+                  />
+
+                  <CircularUI
+                    label="Voice AI"
+                    circles={[{ pattern: 'none' }, { pattern: 'primary' }]}
+                  />
+
+                  <CircularUI
+                    label="Web Agent"
+                    circles={[{ pattern: 'blue' }, { pattern: 'none' }]}
+                  />
+
+                  <CircularUI
+                    label="Human"
+                    circles={[{ pattern: 'border' }, { pattern: 'none' }]}
+                    className="hidden sm:block"
+                  />
+                </div>
+              </FeatureCard>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="border-y border-border/50 bg-card/30 py-20 backdrop-blur-sm md:py-32">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
@@ -540,7 +564,7 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-radial p-12 text-center">
+          <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm p-12 text-center shadow-glow">
             <div className="relative z-10 mx-auto max-w-3xl space-y-8">
               <h2 className="text-4xl font-bold text-foreground md:text-5xl">
                 Ready to turn your nights into profit?
