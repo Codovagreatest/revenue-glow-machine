@@ -46,13 +46,13 @@ export function Hero({
 
       {/* Eyebrow */}
       {eyebrow && (
-        <a href="#" className="group">
+        <a href="#" className="group inline-block mb-6">
           <span
-            className="text-sm text-muted-foreground font-inter mx-auto px-5 py-2 
-            bg-gradient-to-tr from-primary/5 via-primary/10 to-transparent  
-            border-[2px] border-primary/20 
+            className="text-sm text-foreground font-roboto mx-auto px-5 py-2 
+            bg-gradient-to-tr from-primary/10 via-primary/20 to-primary/5  
+            border-[2px] border-primary/40 
             rounded-3xl w-fit tracking-tight uppercase flex items-center justify-center 
-            hover:border-primary/40 transition-all duration-300"
+            hover:border-primary/60 hover:bg-primary/10 transition-all duration-300 shadow-lg shadow-primary/20"
           >
             {eyebrow}
             <ChevronRight className="inline w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
@@ -62,19 +62,19 @@ export function Hero({
 
       {/* Title */}
       <h1
-        className="animate-fade-in -translate-y-4 text-balance 
+        className="animate-fade-in text-balance 
         bg-gradient-to-br from-foreground from-30% to-foreground/40 
         bg-clip-text py-6 text-5xl font-bold leading-none tracking-tighter 
-        text-transparent opacity-0 sm:text-6xl md:text-7xl lg:text-8xl"
+        text-transparent sm:text-6xl md:text-7xl lg:text-8xl font-ubuntu"
       >
         {title}
       </h1>
 
       {/* Subtitle */}
       <p
-        className="animate-fade-in mb-12 -translate-y-4 text-balance 
+        className="animate-fade-in mb-12 text-balance 
         text-lg tracking-tight text-muted-foreground 
-        opacity-0 md:text-xl"
+        md:text-xl font-roboto"
       >
         {subtitle}
       </p>
