@@ -40,7 +40,7 @@ export const GradientCard = ({
   return (
     <motion.div
       ref={cardRef}
-      className="relative rounded-3xl overflow-hidden w-full h-full"
+      className="relative rounded-3xl overflow-hidden w-full h-full font-roboto"
       style={{
         minHeight: "400px",
         transformStyle: "preserve-3d",

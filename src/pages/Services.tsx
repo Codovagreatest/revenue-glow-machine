@@ -12,7 +12,7 @@ const Services = () => {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link to="/" className="flex items-center space-x-2">
             <Zap className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground">24/7 Revenue Machine</span>
+            <span className="text-xl font-bold text-foreground font-ubuntu">24/7 Revenue Machine</span>
           </Link>
           
           <div className="flex items-center space-x-3">
@@ -39,7 +39,7 @@ const Services = () => {
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl font-ubuntu">
               Choose your <span className="bg-gradient-primary bg-clip-text text-transparent">automation</span>
             </h2>
             <p className="mx-auto max-w-3xl text-xl text-muted-foreground">

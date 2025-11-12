@@ -5,6 +5,10 @@ import { FeatureCard, CardHeading, CircularUI } from "@/components/ui/features-1
 import { ServiceCard } from "@/components/ServiceCard";
 import { PricingCard } from "@/components/PricingCard";
 import { StatsCounter } from "@/components/StatsCounter";
+import { OrbitingCircles } from "@/components/ui/orbiting-circles";
+import { LampContainer } from "@/components/ui/lamp";
+import { TestimonialsColumn } from "@/components/ui/testimonials-columns";
+import { motion } from "framer-motion";
 import { 
   Accordion,
   AccordionContent,
@@ -40,10 +44,10 @@ const Index = () => {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center space-x-2">
             <Zap className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground">24/7 Revenue Machine</span>
+            <span className="text-xl font-bold text-foreground font-ubuntu">24/7 Revenue Machine</span>
           </div>
           
-          <div className="hidden items-center space-x-6 md:flex">
+          <div className="hidden items-center space-x-6 md:flex font-roboto">
             <Link to="/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Home
             </Link>
@@ -101,7 +105,7 @@ const Index = () => {
                 Problem #1
               </div>
               
-              <h2 className="text-4xl font-bold text-foreground md:text-5xl">
+              <h2 className="text-4xl font-bold text-foreground md:text-5xl font-ubuntu">
                 Missed after-hours leads
               </h2>
               
@@ -203,7 +207,7 @@ const Index = () => {
                 Problem #2
               </div>
               
-              <h2 className="text-4xl font-bold text-foreground md:text-5xl">
+              <h2 className="text-4xl font-bold text-foreground md:text-5xl font-ubuntu">
                 Leads going cold between contact & booking
               </h2>
               
@@ -247,7 +251,7 @@ const Index = () => {
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl font-ubuntu">
               Automation that <span className="bg-gradient-primary bg-clip-text text-transparent">converts</span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
@@ -288,7 +292,7 @@ const Index = () => {
       <section className="border-y border-border/50 bg-card/30 py-20 backdrop-blur-sm md:py-32">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl font-ubuntu">
               Enterprise-grade <span className="bg-gradient-primary bg-clip-text text-transparent">automation</span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
@@ -377,7 +381,7 @@ const Index = () => {
             <div className="mb-4 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-bold text-accent">
               LIMITED: Only 10 spots this month
             </div>
-            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl font-ubuntu">
               Simple, transparent pricing
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
@@ -446,11 +450,155 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Integration Orbit Section */}
+      <section className="py-20 md:py-32 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+              Seamlessly <span className="bg-gradient-primary bg-clip-text text-transparent">connects</span> with your stack
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Our AI agents integrate with the tools you already use. CRM, calendars, messaging platforms — all working in harmony.
+            </p>
+          </div>
+
+          <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-primary/20 bg-card/30 backdrop-blur-sm md:shadow-xl">
+            <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-primary to-primary/40 bg-clip-text text-center text-6xl md:text-8xl font-bold leading-none text-transparent font-ubuntu">
+              24/7
+            </span>
+
+            {/* Inner Circles */}
+            <OrbitingCircles
+              className="size-[40px] border-none bg-card/80 backdrop-blur-sm"
+              duration={20}
+              delay={20}
+              radius={80}
+            >
+              <MessageSquare className="h-5 w-5 text-primary" />
+            </OrbitingCircles>
+            <OrbitingCircles
+              className="size-[40px] border-none bg-card/80 backdrop-blur-sm"
+              duration={20}
+              delay={10}
+              radius={80}
+            >
+              <Phone className="h-5 w-5 text-primary" />
+            </OrbitingCircles>
+
+            {/* Outer Circles (reverse) */}
+            <OrbitingCircles
+              className="size-[50px] border-none bg-card/80 backdrop-blur-sm"
+              radius={190}
+              duration={20}
+              reverse
+            >
+              <Globe className="h-6 w-6 text-cyan" />
+            </OrbitingCircles>
+            <OrbitingCircles
+              className="size-[50px] border-none bg-card/80 backdrop-blur-sm"
+              radius={190}
+              duration={20}
+              delay={20}
+              reverse
+            >
+              <BarChart3 className="h-6 w-6 text-cyan" />
+            </OrbitingCircles>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-background py-20 md:py-32 relative">
+        <div className="container z-10 mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center justify-center max-w-[540px] mx-auto mb-16"
+          >
+            <div className="flex justify-center">
+              <div className="border border-primary/30 py-1 px-4 rounded-lg bg-primary/5 font-ubuntu">Testimonials</div>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-5 text-foreground font-ubuntu">
+              What our clients say
+            </h2>
+            <p className="text-center mt-5 text-muted-foreground">
+              Real results from businesses capturing revenue 24/7
+            </p>
+          </motion.div>
+
+          <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
+            <TestimonialsColumn testimonials={[
+              {
+                text: "The 21-day pilot captured 38 bookings we would've missed. Our after-hours conversion rate jumped 14% in the first month. This pays for itself.",
+                image: "https://randomuser.me/api/portraits/women/1.jpg",
+                name: "Sarah Mitchell",
+                role: "Operations Director, Local Clinic"
+              },
+              {
+                text: "Setup was incredibly smooth. Within 72 hours, our AI chat was handling Instagram DMs like a pro. The voice caller is honestly better than our junior reps at qualification.",
+                image: "https://randomuser.me/api/portraits/men/2.jpg",
+                name: "Marcus Chen",
+                role: "Growth Lead, SaaS Startup"
+              },
+              {
+                text: "We were skeptical about AI handling customer conversations. But the team trained it so well on our brand voice, customers can't tell the difference. 3.2x ROI in 3 weeks.",
+                image: "https://randomuser.me/api/portraits/women/3.jpg",
+                name: "Jennifer Rodriguez",
+                role: "CEO, E-commerce Brand"
+              }
+            ]} duration={15} />
+            <TestimonialsColumn testimonials={[
+              {
+                text: "The ROI guarantee gave us confidence to try this. Now we're capturing leads at 2 AM that convert to $5K+ deals. Our competitors are still sleeping.",
+                image: "https://randomuser.me/api/portraits/men/4.jpg",
+                name: "David Park",
+                role: "Sales Director, B2B Agency"
+              },
+              {
+                text: "Support costs down 45%, booking velocity up 22%. The analytics dashboard shows exactly where we're winning. This is the future of customer ops.",
+                image: "https://randomuser.me/api/portraits/women/5.jpg",
+                name: "Amanda Foster",
+                role: "COO, Healthcare Provider"
+              },
+              {
+                text: "What impressed me most was the human escalation logic. The AI knows when to hand off, and our team only handles qualified, warm leads now. Game changer.",
+                image: "https://randomuser.me/api/portraits/men/6.jpg",
+                name: "Thomas Wright",
+                role: "Customer Success VP"
+              }
+            ]} className="hidden md:block" duration={19} />
+            <TestimonialsColumn testimonials={[
+              {
+                text: "The website voice agent rescued 18 form abandoners in the first week. That's $27K in potential revenue we almost lost. Worth every penny.",
+                image: "https://randomuser.me/api/portraits/women/7.jpg",
+                name: "Lisa Thompson",
+                role: "Marketing Director"
+              },
+              {
+                text: "Integration with our CRM was seamless. Twilio logs, calendar invites, SMS reminders — everything just works. The dev team was impressed.",
+                image: "https://randomuser.me/api/portraits/men/8.jpg",
+                name: "Ryan Kumar",
+                role: "CTO, Tech Company"
+              },
+              {
+                text: "Our booking velocity increased 25% without hiring more staff. The AI handles nights, weekends, holidays — when we used to lose the most leads.",
+                image: "https://randomuser.me/api/portraits/women/9.jpg",
+                name: "Nicole Adams",
+                role: "VP Operations"
+              }
+            ]} className="hidden lg:block" duration={17} />
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-foreground">
+            <h2 className="mb-4 text-3xl font-bold text-foreground font-ubuntu">
               Proven results for businesses like yours
             </h2>
           </div>
@@ -499,7 +647,7 @@ const Index = () => {
       <section className="border-t border-border/50 bg-card/30 py-20 backdrop-blur-sm md:py-32">
         <div className="container mx-auto max-w-3xl px-4">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-foreground">
+            <h2 className="mb-4 text-4xl font-bold text-foreground font-ubuntu">
               Frequently asked questions
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -561,39 +709,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-32">
-        <div className="container mx-auto px-4">
-          <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm p-12 text-center shadow-glow">
-            <div className="relative z-10 mx-auto max-w-3xl space-y-8">
-              <h2 className="text-4xl font-bold text-foreground md:text-5xl">
-                Ready to turn your nights into profit?
-              </h2>
-              
-              <p className="text-xl text-muted-foreground">
-                Join 50+ businesses already capturing revenue 24/7. Start your 21-day pilot today 
-                and see measurable ROI in 3 weeks — or we work for free.
-              </p>
-              
-              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <Button variant="hero" size="lg" className="text-lg" asChild>
-                  <Link to="/pilot">
-                    Book Your Pilot — $997 Setup
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg" asChild>
-                  <Link to="/contact">Schedule a Demo Call</Link>
-                </Button>
-              </div>
-              
-              <p className="text-sm text-muted-foreground">
-                Limited to 10 businesses this month • 3x ROI guarantee • Setup in 72 hours
-              </p>
-            </div>
+      {/* Dramatic Lamp CTA Section */}
+      <LampContainer className="my-20">
+        <motion.div
+          initial={{ opacity: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="mt-8 space-y-8"
+        >
+          <h2 className="bg-gradient-to-br from-foreground to-muted-foreground py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-7xl font-ubuntu">
+            Turn nights into profit.<br />
+            Start today.
+          </h2>
+          
+          <p className="text-center text-xl text-muted-foreground max-w-2xl mx-auto">
+            Join 50+ businesses capturing revenue 24/7 with AI that never sleeps
+          </p>
+
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center pt-4">
+            <Button variant="hero" size="lg" className="text-lg font-roboto" asChild>
+              <Link to="/pilot">
+                Book Your Pilot — $997
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" className="text-lg font-roboto" asChild>
+              <Link to="/contact">See Live Demo</Link>
+            </Button>
           </div>
-        </div>
-      </section>
+
+          <p className="text-sm text-muted-foreground text-center pt-4">
+            ⚡ Limited to 10 businesses this month • 3x ROI guarantee • Setup in 72 hours
+          </p>
+        </motion.div>
+      </LampContainer>
 
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/30 py-12 backdrop-blur-sm">
@@ -602,7 +755,7 @@ const Index = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <Zap className="h-6 w-6 text-primary" />
-                <span className="text-lg font-bold text-foreground">24/7 Revenue Machine</span>
+                <span className="text-lg font-bold text-foreground font-ubuntu">24/7 Revenue Machine</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 AI automation that turns customer support into revenue.

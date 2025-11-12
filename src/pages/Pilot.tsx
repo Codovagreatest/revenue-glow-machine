@@ -20,7 +20,7 @@ const Pilot = () => {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link to="/" className="flex items-center space-x-2">
             <Zap className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground">24/7 Revenue Machine</span>
+            <span className="text-xl font-bold text-foreground font-ubuntu">24/7 Revenue Machine</span>
           </Link>
           
           <Button variant="ghost" size="sm" asChild>
@@ -46,7 +46,7 @@ const Pilot = () => {
                 <div className="mb-4 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-bold text-accent animate-pulse-glow">
                   LIMITED: Only 10 spots this month
                 </div>
-                <h1 className="mb-4 text-5xl font-bold text-foreground md:text-6xl">
+                <h1 className="mb-4 text-5xl font-bold text-foreground md:text-6xl font-ubuntu">
                   Book Your <span className="text-primary">21-Day Pilot</span>
                 </h1>
                 <p className="text-xl text-muted-foreground">

@@ -20,7 +20,7 @@ const Contact = () => {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link to="/" className="flex items-center space-x-2">
             <Zap className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground">24/7 Revenue Machine</span>
+            <span className="text-xl font-bold text-foreground font-ubuntu">24/7 Revenue Machine</span>
           </Link>
           
           <Button variant="hero" size="sm" asChild>
@@ -43,7 +43,7 @@ const Contact = () => {
             {/* Left Column - Info */}
             <div className="space-y-8">
               <div>
-                <h1 className="mb-4 text-5xl font-bold text-foreground md:text-6xl">
+                <h1 className="mb-4 text-5xl font-bold text-foreground md:text-6xl font-ubuntu">
                   Let's <span className="text-primary">talk</span>
                 </h1>
                 <p className="text-xl text-muted-foreground">
