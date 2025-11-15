@@ -8,6 +8,7 @@ import { StatsCounter } from "@/components/StatsCounter";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { LampContainer } from "@/components/ui/lamp";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns";
+import { VideoShowcase } from "@/components/ui/video-showcase";
 import { Navigation } from "@/components/Navigation";
 import { motion } from "framer-motion";
 import { 
@@ -63,6 +64,14 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Video Showcase Section */}
+      <VideoShowcase 
+        videoUrl="https://player.cloudinary.com/embed/?cloud_name=dm6naju6a&public_id=unicorn-1763185568755_online-video-cutter.com_zfec7d&profile=cld-default"
+        title="See It In Action"
+        subtitle="Watch how Codova transforms your customer engagement with AI-powered automation that works 24/7"
+        badge="Live Demo"
+      />
 
       {/* Problem Section A - Missed After-Hours Leads */}
       <section className="py-20 md:py-32">
