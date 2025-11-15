@@ -17,9 +17,9 @@ All colors MUST be HSL.
     --popover: 220 40% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 207 90% 61%;
+    --primary: 217 91% 60%;
     --primary-foreground: 222 47% 5%;
-    --primary-glow: 207 100% 75%;
+    --primary-glow: 217 100% 70%;
 
     --secondary: 220 40% 15%;
     --secondary-foreground: 210 40% 98%;
@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --muted: 220 30% 18%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 25 95% 53%;
+    --accent: 217 91% 60%;
     --accent-foreground: 222 47% 5%;
 
     --cyan: 190 80% 50%;
@@ -38,17 +38,20 @@ All colors MUST be HSL.
 
     --border: 220 20% 25%;
     --input: 220 20% 20%;
-    --ring: 207 90% 61%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(207 90% 61%), hsl(207 100% 75%));
-    --gradient-radial: radial-gradient(ellipse at center, hsl(207 90% 61% / 0.2), transparent 70%);
-    --gradient-hero: linear-gradient(180deg, hsl(222 47% 5%), hsl(220 40% 8%));
-    --gradient-card: linear-gradient(135deg, hsl(207 90% 61% / 0.1) 0%, hsl(190 80% 50% / 0.05) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 100% 70%));
+    --gradient-blue-dark: linear-gradient(135deg, hsl(222 47% 5%), hsl(217 91% 15%));
+    --gradient-radial: radial-gradient(ellipse at center, hsl(217 91% 60% / 0.2), transparent 70%);
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 5%), hsl(217 40% 8%));
+    --gradient-card: linear-gradient(135deg, hsl(217 91% 60% / 0.1) 0%, hsl(217 80% 50% / 0.05) 100%);
+    --gradient-nav: linear-gradient(135deg, hsl(222 47% 8% / 0.95), hsl(217 40% 10% / 0.95));
     
-    --shadow-glow: 0 0 60px hsl(207 90% 61% / 0.4);
-    --shadow-soft: 0 10px 40px -10px hsl(207 90% 61% / 0.3);
+    --shadow-glow: 0 0 60px hsl(217 91% 60% / 0.4);
+    --shadow-soft: 0 10px 40px -10px hsl(217 91% 60% / 0.3);
+    --shadow-premium: 0 20px 60px -15px hsl(217 91% 60% / 0.5), 0 0 0 1px hsl(217 91% 60% / 0.1);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }

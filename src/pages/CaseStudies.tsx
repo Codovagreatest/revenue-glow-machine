@@ -1,38 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Hero } from "@/components/ui/hero-1";
+import { Navigation } from "@/components/Navigation";
 import { Link } from "react-router-dom";
-import { Zap, ArrowLeft, TrendingUp, Clock, BarChart3 } from "lucide-react";
+import { ArrowLeft, TrendingUp, Clock, BarChart3, Zap } from "lucide-react";
 
 const CaseStudies = () => {
   return (
     <div className="min-h-screen bg-gradient-hero">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-lg">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link to="/" className="flex items-center space-x-2">
-            <Zap className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground font-ubuntu">24/7 Revenue Machine</span>
-          </Link>
-          
-          <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="sm" asChild>
-              <Link to="/contact">Book Demo</Link>
-            </Button>
-            <Button variant="hero" size="sm" asChild>
-              <Link to="/pilot">Start Pilot</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
-      <Hero
-        eyebrow="Real Results • Real Businesses"
-        title="Proven success stories"
-        subtitle="See how businesses like yours are capturing more revenue, reducing costs, and never missing a lead again with our 24/7 AI automation."
-        ctaLabel="Start Your Pilot"
-        ctaHref="/pilot"
-      />
+      <div className="pt-20">
+        <Hero
+          eyebrow="Real Results • Real Businesses"
+          title="Proven success stories"
+          subtitle="See how businesses like yours are capturing more revenue, reducing costs, and never missing a lead again with our 24/7 AI automation."
+          ctaLabel="Start Your Pilot"
+          ctaHref="/pilot"
+        />
+      </div>
 
       {/* Case Studies Section */}
       <section className="py-20">
