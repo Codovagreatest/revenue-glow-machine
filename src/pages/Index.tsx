@@ -215,6 +215,62 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Video Showcase Section */}
+      <section className="py-20 md:py-32 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="mb-16 text-center">
+            <div className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary">
+              See It In Action
+            </div>
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl font-ubuntu">
+              Watch our AI <span className="bg-gradient-primary bg-clip-text text-transparent">transform</span> businesses
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Real-time lead capture, intelligent qualification, and seamless booking in action
+            </p>
+          </div>
+
+          <div className="mx-auto max-w-6xl">
+            <div className="relative rounded-3xl overflow-hidden border border-primary/30 bg-gradient-card backdrop-blur-sm shadow-glow">
+              <div className="absolute inset-0 bg-gradient-radial opacity-30 pointer-events-none"></div>
+
+              <div className="relative aspect-video">
+                <iframe
+                  src="https://player.cloudinary.com/embed/?cloud_name=dm6naju6a&public_id=unicorn-1763185568755_online-video-cutter.com_zfec7d&profile=cld-default&autoplay=true&loop=true&muted=true&controls=false"
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 'none' }}
+                  allow="autoplay; fullscreen; encrypted-media"
+                  title="AI Revenue Machine Demo"
+                />
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background/80 to-transparent pointer-events-none"></div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mt-12 grid gap-6 md:grid-cols-3"
+            >
+              <div className="text-center p-6 rounded-xl border border-border bg-card/50 backdrop-blur-sm">
+                <div className="mb-2 text-3xl font-bold text-primary">100%</div>
+                <p className="text-sm text-muted-foreground">Automated Lead Response</p>
+              </div>
+              <div className="text-center p-6 rounded-xl border border-border bg-card/50 backdrop-blur-sm">
+                <div className="mb-2 text-3xl font-bold text-primary">&lt;2min</div>
+                <p className="text-sm text-muted-foreground">Average Response Time</p>
+              </div>
+              <div className="text-center p-6 rounded-xl border border-border bg-card/50 backdrop-blur-sm">
+                <div className="mb-2 text-3xl font-bold text-primary">24/7</div>
+                <p className="text-sm text-muted-foreground">Always-On Availability</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section with Premium Gradient Cards */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
@@ -223,7 +279,7 @@ const Index = () => {
               Automation that <span className="bg-gradient-primary bg-clip-text text-transparent">converts</span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              AI-powered tools that work 24/7 to capture, qualify, and convert leads 
+              AI-powered tools that work 24/7 to capture, qualify, and convert leads
               while you focus on closing deals.
             </p>
           </div>
