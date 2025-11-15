@@ -9,7 +9,6 @@ import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { LampContainer } from "@/components/ui/lamp";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns";
 import { Navigation } from "@/components/Navigation";
-import { CloudinaryVideo } from "@/components/CloudinaryVideo";
 import { motion } from "framer-motion";
 import { 
   Accordion,
@@ -473,57 +472,6 @@ const Index = () => {
               <BarChart3 className="h-6 w-6 text-cyan" />
             </OrbitingCircles>
           </div>
-        </div>
-      </section>
-
-      {/* AI Technology Showcase Video Section */}
-      <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center justify-center max-w-[640px] mx-auto mb-12 text-center"
-          >
-            <div className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary mb-6 font-ubuntu">
-              Powered by Advanced AI
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground font-ubuntu mb-4">
-              The Future of Customer Engagement
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Experience the next generation of AI-powered automation that works while you sleep
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
-            className="relative mx-auto max-w-5xl"
-          >
-            <div className="relative rounded-2xl overflow-hidden border border-primary/30 bg-card/30 backdrop-blur-sm shadow-2xl shadow-primary/20">
-              {/* Gradient overlay for premium effect */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-10 pointer-events-none" />
-              
-              {/* Video */}
-              <div className="relative aspect-video">
-                <CloudinaryVideo 
-                  cloudName="dm6naju6a"
-                  publicId="unicorn-1763185568755_online-video-cutter.com_zfec7d"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Bottom gradient bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-cyan to-primary z-20" />
-            </div>
-
-            {/* Glow effect */}
-            <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-cyan/20 to-primary/20 rounded-2xl blur-2xl -z-10" />
-          </motion.div>
         </div>
       </section>
 
