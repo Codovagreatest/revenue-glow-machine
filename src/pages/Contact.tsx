@@ -3,8 +3,9 @@ import { Hero } from "@/components/ui/hero-1";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Navigation } from "@/components/Navigation";
 import { Link } from "react-router-dom";
-import { Zap, ArrowLeft, Mail, Phone, MessageSquare } from "lucide-react";
+import { ArrowLeft, Mail, Phone, MessageSquare, Zap } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -15,22 +16,10 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gradient-hero">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-lg">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link to="/" className="flex items-center space-x-2">
-            <Zap className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground font-ubuntu">24/7 Revenue Machine</span>
-          </Link>
-          
-          <Button variant="hero" size="sm" asChild>
-            <Link to="/pilot">Start Pilot</Link>
-          </Button>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section className="py-20 pt-32">{/* Added pt-32 for fixed nav spacing */}
         <div className="container mx-auto px-4">
           <Button variant="ghost" className="mb-8" asChild>
             <Link to="/">

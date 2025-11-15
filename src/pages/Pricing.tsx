@@ -1,39 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Hero } from "@/components/ui/hero-1";
 import { PricingCard } from "@/components/PricingCard";
+import { Navigation } from "@/components/Navigation";
 import { Link } from "react-router-dom";
-import { Zap, ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check } from "lucide-react";
 
 const Pricing = () => {
   return (
     <div className="min-h-screen bg-gradient-hero">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-lg">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link to="/" className="flex items-center space-x-2">
-            <Zap className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground font-ubuntu">24/7 Revenue Machine</span>
-          </Link>
-          
-          <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="sm" asChild>
-              <Link to="/contact">Book Demo</Link>
-            </Button>
-            <Button variant="hero" size="sm" asChild>
-              <Link to="/pilot">Start Pilot</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
-      <Hero
-        eyebrow="Transparent Pricing • No Hidden Fees"
-        title="Choose your plan"
-        subtitle="Start with a proven pilot, scale when you see results. All plans include setup, training, and our 3x ROI guarantee."
-        ctaLabel="Start Your Pilot"
-        ctaHref="/pilot"
-      />
+      <div className="pt-20">
+        <Hero
+          eyebrow="Transparent Pricing • No Hidden Fees"
+          title="Choose your plan"
+          subtitle="Start with a proven pilot, scale when you see results. All plans include setup, training, and our 3x ROI guarantee."
+          ctaLabel="Start Your Pilot"
+          ctaHref="/pilot"
+        />
+      </div>
 
       {/* Pricing Section */}
       <section className="py-20">

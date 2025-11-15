@@ -8,6 +8,7 @@ import { StatsCounter } from "@/components/StatsCounter";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { LampContainer } from "@/components/ui/lamp";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns";
+import { Navigation } from "@/components/Navigation";
 import { motion } from "framer-motion";
 import { 
   Accordion,
@@ -39,51 +40,18 @@ import webVoiceIcon from "@/assets/web-voice-icon.jpg";
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-hero">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-lg">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <div className="flex items-center space-x-2">
-            <Zap className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground font-ubuntu">24/7 Revenue Machine</span>
-          </div>
-          
-          <div className="hidden items-center space-x-6 md:flex font-roboto">
-            <Link to="/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Home
-            </Link>
-            <Link to="/services" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Services
-            </Link>
-            <Link to="/pricing" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Pricing
-            </Link>
-            <Link to="/case-studies" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Case Studies
-            </Link>
-            <Link to="/contact" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Contact
-            </Link>
-          </div>
-          
-          <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="sm" asChild>
-              <Link to="/contact">Book Demo</Link>
-            </Button>
-            <Button variant="hero" size="sm" asChild>
-              <Link to="/pilot">Start Pilot</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section with New Premium Component */}
-      <Hero 
-        eyebrow="AI Automation That Never Sleeps"
-        title="We make your nights profitable"
-        subtitle="Never miss a lead again. AI chat, voice, and web agents that qualify, book, and call 24/7 — so you capture revenue around the clock, lower CAC, and keep your pipeline warm."
-        ctaLabel="Book 21-Day Pilot"
-        ctaHref="/pilot"
-      />
+      <div className="pt-20">
+        <Hero 
+          eyebrow="AI Automation That Never Sleeps"
+          title="We make your nights profitable"
+          subtitle="Never miss a lead again. AI chat, voice, and web agents that qualify, book, and call 24/7 — so you capture revenue around the clock, lower CAC, and keep your pipeline warm."
+          ctaLabel="Book 21-Day Pilot"
+          ctaHref="/pilot"
+        />
+      </div>
 
       {/* Stats Section */}
       <section className="border-y border-border/50 bg-card/30 py-16 backdrop-blur-sm">
