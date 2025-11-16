@@ -5,7 +5,6 @@ import { FeatureCard, CardHeading, CircularUI } from "@/components/ui/features-1
 import { ServiceCard } from "@/components/ServiceCard";
 import { PricingCard } from "@/components/PricingCard";
 import { StatsCounter } from "@/components/StatsCounter";
-import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { LampContainer } from "@/components/ui/lamp";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns";
 import { Navigation } from "@/components/Navigation";
@@ -418,68 +417,47 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Integration Orbit Section */}
+      {/* Integration Section */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
-              Seamlessly <span className="bg-gradient-primary bg-clip-text text-transparent">connects</span> with your stack
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              Our AI agents integrate with the tools you already use. CRM, calendars, messaging platforms — all working in harmony.
-            </p>
-          </div>
-
-          <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-primary/20 bg-card/30 backdrop-blur-sm md:shadow-xl">
+          <div className="relative">
             <iframe
               src="https://player.cloudinary.com/embed/?cloud_name=dm6naju6a&public_id=unicorn-1763185568755_online-video-cutter.com_zfec7d&profile=cld-default&autoplay=true&loop=true&muted=true&controls=false"
-              className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
+              className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[300px] object-cover opacity-20 pointer-events-none z-0"
               allow="autoplay"
               style={{ border: 'none' }}
             />
 
-            <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/60" />
+            <div className="relative z-10 text-center">
+              <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+                Seamlessly <span className="bg-gradient-primary bg-clip-text text-transparent">connects</span> with your stack
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+                Our AI agents integrate with the tools you already use. CRM, calendars, messaging platforms — all working in harmony.
+              </p>
+            </div>
+          </div>
 
-            <span className="relative z-10 pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-primary to-primary/40 bg-clip-text text-center text-6xl md:text-8xl font-bold leading-none text-transparent font-ubuntu">
-              24/7
-            </span>
+          <div className="mt-16 grid gap-8 md:grid-cols-3 lg:grid-cols-4">
+            <div className="rounded-xl border border-border bg-card/50 p-6 backdrop-blur-sm text-center">
+              <MessageSquare className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground">Messaging</h3>
+            </div>
 
-            {/* Inner Circles */}
-            <OrbitingCircles
-              className="size-[40px] border-none bg-card/80 backdrop-blur-sm"
-              duration={20}
-              delay={20}
-              radius={80}
-            >
-              <MessageSquare className="h-5 w-5 text-primary" />
-            </OrbitingCircles>
-            <OrbitingCircles
-              className="size-[40px] border-none bg-card/80 backdrop-blur-sm"
-              duration={20}
-              delay={10}
-              radius={80}
-            >
-              <Phone className="h-5 w-5 text-primary" />
-            </OrbitingCircles>
+            <div className="rounded-xl border border-border bg-card/50 p-6 backdrop-blur-sm text-center">
+              <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground">Voice</h3>
+            </div>
 
-            {/* Outer Circles (reverse) */}
-            <OrbitingCircles
-              className="size-[50px] border-none bg-card/80 backdrop-blur-sm"
-              radius={190}
-              duration={20}
-              reverse
-            >
-              <Globe className="h-6 w-6 text-cyan" />
-            </OrbitingCircles>
-            <OrbitingCircles
-              className="size-[50px] border-none bg-card/80 backdrop-blur-sm"
-              radius={190}
-              duration={20}
-              delay={20}
-              reverse
-            >
-              <BarChart3 className="h-6 w-6 text-cyan" />
-            </OrbitingCircles>
+            <div className="rounded-xl border border-border bg-card/50 p-6 backdrop-blur-sm text-center">
+              <Globe className="h-8 w-8 text-cyan mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground">Web</h3>
+            </div>
+
+            <div className="rounded-xl border border-border bg-card/50 p-6 backdrop-blur-sm text-center">
+              <BarChart3 className="h-8 w-8 text-cyan mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground">Analytics</h3>
+            </div>
           </div>
         </div>
       </section>
