@@ -1,20 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Sparkles } from "lucide-react";
+import codavaLogo from "@/assets/codova-logo.png";
 
 export const Navigation = () => {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
       <div className="rounded-2xl border border-primary/20 bg-gradient-nav backdrop-blur-xl shadow-premium">
         <div className="container mx-auto flex h-16 items-center justify-between px-6">
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link to="/" className="flex items-center group">
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/30 transition-all duration-300" />
-              <Sparkles className="h-6 w-6 text-primary relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+              <img 
+                src={codavaLogo} 
+                alt="Codova Logo" 
+                className="h-10 w-auto relative z-10 group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent font-ubuntu tracking-tight">
-              Codova
-            </span>
           </Link>
           
           <div className="hidden items-center space-x-8 md:flex font-roboto">
