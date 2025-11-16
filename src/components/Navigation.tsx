@@ -13,7 +13,7 @@ export const Navigation = () => {
               <img 
                 src={codavaLogo} 
                 alt="Codova Logo" 
-                className="h-10 w-auto relative z-10 group-hover:scale-105 transition-transform duration-300"
+                className="h-20 w-auto relative z-10 group-hover:scale-105 transition-transform duration-300"
               />
             </div>
           </Link>
