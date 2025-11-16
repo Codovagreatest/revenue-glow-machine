@@ -431,7 +431,16 @@ const Index = () => {
           </div>
 
           <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-primary/20 bg-card/30 backdrop-blur-sm md:shadow-xl">
-            <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-primary to-primary/40 bg-clip-text text-center text-6xl md:text-8xl font-bold leading-none text-transparent font-ubuntu">
+            <iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=dm6naju6a&public_id=unicorn-1763185568755_online-video-cutter.com_zfec7d&profile=cld-default&autoplay=true&loop=true&muted=true&controls=false"
+              className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
+              allow="autoplay"
+              style={{ border: 'none' }}
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/60" />
+
+            <span className="relative z-10 pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-primary to-primary/40 bg-clip-text text-center text-6xl md:text-8xl font-bold leading-none text-transparent font-ubuntu">
               24/7
             </span>
 
