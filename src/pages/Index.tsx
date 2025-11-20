@@ -5,6 +5,7 @@ import { FeatureCard, CardHeading, CircularUI } from "@/components/ui/features-1
 import { ServiceCard } from "@/components/ServiceCard";
 import { PricingCard } from "@/components/PricingCard";
 import { StatsCounter } from "@/components/StatsCounter";
+import { GlowCard } from "@/components/ui/glow-card";
 import { LampContainer } from "@/components/ui/lamp";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns";
 import { Navigation } from "@/components/Navigation";
@@ -318,7 +319,7 @@ const Index = () => {
             </motion.p>
           </div>
 
-          <div className="space-y-6 max-w-4xl">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 num: '1',
@@ -340,52 +341,41 @@ const Index = () => {
                 title: 'The Relentless Follow-Up Engine',
                 desc: 'Your AI calls, texts, and messages your leads with zero shame and perfect timing. It never gets tired. Never forgets. Never loses a deal.',
                 highlight: 'Revenue recovery on autopilot.'
-              },
-              {
-                num: '4',
-                icon: BarChart3,
-                title: 'Real-Time Performance View',
-                desc: 'You\'re not buying "features." You\'re buying outcomes. Know how many leads you saved, were booked, revenue recovered, and time & payroll saved.',
-                highlight: 'This is ROI you can actually see.'
               }
             ].map((item, idx) => {
               const IconComponent = item.icon;
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group relative"
                 >
-                  <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-full" />
-
-                  <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-card/40 to-background/50 p-8 hover:border-primary/40 hover:from-primary/10 transition-all duration-300">
-                    <div className="flex items-start gap-6">
-                      <div className="flex-shrink-0">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-primary text-white font-bold text-xl">
-                          {item.num}
-                        </div>
-                      </div>
-
-                      <div className="flex-1 space-y-4">
+                  <GlowCard
+                    glowColor="blue"
+                    customSize
+                    className="w-full h-full"
+                  >
+                    <div className="flex flex-col h-full justify-between text-foreground">
+                      <div className="space-y-4">
                         <div className="flex items-center gap-3">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20 text-primary font-bold text-lg">
+                            {item.num}
+                          </div>
                           <IconComponent className="h-6 w-6 text-primary flex-shrink-0" />
-                          <h3 className="text-2xl font-bold text-foreground">{item.title}</h3>
                         </div>
-
-                        <p className="text-muted-foreground leading-relaxed text-base">
+                        <h3 className="text-xl font-bold leading-snug">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           {item.desc}
                         </p>
-
-                        <div className="inline-flex items-center gap-2 pt-2">
-                          <div className="h-1 w-6 bg-primary rounded-full" />
-                          <p className="text-primary font-semibold">{item.highlight}</p>
-                        </div>
+                      </div>
+                      <div className="inline-flex items-center gap-2 pt-4">
+                        <div className="h-1 w-4 bg-primary rounded-full" />
+                        <p className="text-sm text-primary font-semibold">{item.highlight}</p>
                       </div>
                     </div>
-                  </div>
+                  </GlowCard>
                 </motion.div>
               );
             })}
