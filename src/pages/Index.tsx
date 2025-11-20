@@ -64,112 +64,177 @@ const Index = () => {
       </section>
 
       {/* Problem Section A - Why You're Here */}
-      <section className="py-20 md:py-32">
+      <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <div className="inline-block rounded-lg bg-destructive/10 px-3 py-1 text-sm font-medium text-destructive mb-8">
+          <div className="max-w-5xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="inline-block rounded-lg bg-destructive/10 px-3 py-1 text-sm font-medium text-destructive mb-8"
+            >
               The Reality
-            </div>
+            </motion.div>
 
-            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8 font-ubuntu">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-6xl md:text-7xl font-black text-foreground mb-12 font-display leading-tight"
+            >
               Why You're Here
-            </h2>
+            </motion.h2>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p className="text-xl font-semibold text-foreground">
-                If you're honest… your customer support is slow, expensive, and leaking revenue.
-              </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div className="space-y-6">
+                <motion.p
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-2xl font-semibold text-foreground"
+                >
+                  If you're honest… your customer support is slow, expensive, and leaking revenue.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="space-y-3 text-lg text-foreground font-semibold"
+                >
+                  <p>You know it.</p>
+                  <p>Your customers know it.</p>
+                  <p className="text-destructive">Your competitors love it.</p>
+                </motion.div>
+              </div>
 
               <div className="space-y-4">
-                <p className="text-foreground font-semibold">You know it.<br/>Your customers know it.<br/>Your competitors love it.</p>
-
-                <div className="border-l-4 border-primary/50 pl-6 space-y-4">
-                  <p>
-                    <strong>Leads message you on Instagram at 1AM.</strong> You reply at 9AM. They're gone.
-                  </p>
-
-                  <p>
-                    <strong>Customers ask the same questions all day.</strong> Your team repeats themselves like broken robots.
-                  </p>
-
-                  <p>
-                    <strong>Agents get overwhelmed.</strong> Tickets pile up. People wait. Reviews suffer.
-                  </p>
-
-                  <p>
-                    <strong>Support eats payroll but doesn't bring revenue.</strong>
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-destructive/5 border border-destructive/20 rounded-lg p-6 mt-8">
-                <p className="text-foreground font-semibold mb-2">The Cost of Every Minute You're Not Responding</p>
-                <p>Someone else is. And they're winning.</p>
+                {[
+                  { icon: '🕐', text: 'Leads message you on Instagram at 1AM. You reply at 9AM. They\'re gone.' },
+                  { icon: '🤖', text: 'Customers ask the same questions all day. Your team repeats themselves like broken robots.' },
+                  { icon: '📈', text: 'Agents get overwhelmed. Tickets pile up. People wait. Reviews suffer.' },
+                  { icon: '💸', text: 'Support eats payroll but doesn\'t bring revenue.' }
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-destructive/5 border border-destructive/30 rounded-lg p-5 hover:bg-destructive/10 hover:border-destructive/50 transition-all duration-300 cursor-pointer group"
+                  >
+                    <div className="flex items-start gap-4">
+                      <span className="text-3xl flex-shrink-0 group-hover:scale-110 transition-transform">{item.icon}</span>
+                      <p className="text-foreground leading-relaxed">{item.text}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-destructive/10 to-destructive/5 border border-destructive/30 rounded-xl p-8 mt-12 backdrop-blur-sm hover:border-destructive/50 transition-colors"
+            >
+              <p className="text-2xl font-bold text-foreground mb-3">The Cost of Every Minute You're Not Responding</p>
+              <p className="text-lg text-destructive font-semibold">Someone else is. And they're winning.</p>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Problem Section B - The Promise */}
-      <section className="border-y border-border/50 bg-card/30 py-20 backdrop-blur-sm md:py-32">
+      <section className="border-y border-border/50 bg-card/30 py-20 backdrop-blur-sm md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-8">
+          <div className="max-w-5xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-8"
+            >
               The Solution
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-6xl md:text-7xl font-black text-foreground mb-12 font-display leading-tight"
+            >
+              The Promise
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-2xl font-bold text-foreground mb-12 leading-relaxed"
+            >
+              We give you a Customer Support Team that never sleeps, never complains, never forgets, and never drops the ball.
+            </motion.p>
+
+            <div className="bg-gradient-to-br from-primary/10 via-card/50 to-primary/5 border border-primary/20 rounded-2xl p-10 backdrop-blur-sm mb-12">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-lg text-foreground mb-8"
+              >
+                This isn't "AI bots."<br/>
+                <span className="text-2xl font-bold text-primary block mt-2">This is your 24/7 Revenue & Support Infrastructure.</span>
+              </motion.p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  { emoji: '💬', title: 'It feels human.', desc: 'Conversations that convert, not bots that frustrate.' },
+                  { emoji: '🎯', title: 'It talks like your best rep.', desc: 'Brand-voice matched perfectly.' },
+                  { emoji: '⚡', title: 'It books faster.', desc: 'Instant calendar, zero friction.' },
+                  { emoji: '🔔', title: 'It answers instantly.', desc: 'Not in minutes. Not in hours. Now.' },
+                  { emoji: '🔄', title: 'It follows up relentlessly.', desc: 'Every lead, every time, perfect timing.' },
+                  { emoji: '💰', title: 'And it makes you money while you\'re away.', desc: 'Revenue while you sleep.' }
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 + idx * 0.08 }}
+                    viewport={{ once: true }}
+                    className="bg-background/40 border border-primary/20 rounded-lg p-5 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 group"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="text-3xl flex-shrink-0 group-hover:scale-110 transition-transform">{item.emoji}</span>
+                      <div>
+                        <p className="font-bold text-foreground mb-1">{item.title}</p>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8 font-ubuntu">
-              The Promise
-            </h2>
-
-            <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
-              <p className="text-2xl font-semibold text-foreground">
-                We give you a Customer Support Team that never sleeps, never complains, never forgets, and never drops the ball.
-              </p>
-
-              <div className="space-y-6 bg-primary/5 border border-primary/20 rounded-lg p-8">
-                <p className="text-foreground font-semibold mb-4">
-                  This isn't "AI bots."<br/>This is your <span className="text-primary">24/7 Revenue & Support Infrastructure.</span>
-                </p>
-
-                <ul className="space-y-4">
-                  <li className="flex items-start space-x-3">
-                    <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                    <p className="text-foreground"><strong>It feels human.</strong> Conversations that convert, not bots that frustrate.</p>
-                  </li>
-
-                  <li className="flex items-start space-x-3">
-                    <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                    <p className="text-foreground"><strong>It talks like your best rep.</strong> Brand-voice matched perfectly.</p>
-                  </li>
-
-                  <li className="flex items-start space-x-3">
-                    <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                    <p className="text-foreground"><strong>It books faster.</strong> Instant calendar, zero friction.</p>
-                  </li>
-
-                  <li className="flex items-start space-x-3">
-                    <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                    <p className="text-foreground"><strong>It answers instantly.</strong> Not in minutes. Not in hours. Now.</p>
-                  </li>
-
-                  <li className="flex items-start space-x-3">
-                    <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                    <p className="text-foreground"><strong>It follows up relentlessly.</strong> Every lead, every time, perfect timing.</p>
-                  </li>
-
-                  <li className="flex items-start space-x-3">
-                    <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                    <p className="text-foreground"><strong>And it makes you money while you're away.</strong> Revenue while you sleep.</p>
-                  </li>
-                </ul>
-              </div>
-
-              <Button variant="accent" size="lg" asChild>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <Button variant="accent" size="lg" asChild className="text-lg">
                 <Link to="/pilot">Activate Your AI Team</Link>
               </Button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -216,102 +281,127 @@ const Index = () => {
       </section>
 
       {/* Advanced Features Section - The Stuff Your Team Hates Doing */}
-      <section className="border-y border-border/50 bg-card/30 py-20 backdrop-blur-sm md:py-32">
+      <section className="border-y border-border/50 bg-card/30 py-20 backdrop-blur-sm md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="mb-16">
-            <div className="inline-block rounded-lg bg-accent/10 px-3 py-1 text-sm font-medium text-accent mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="inline-block rounded-lg bg-accent/10 px-3 py-1 text-sm font-medium text-accent mb-8"
+            >
               The Automation
-            </div>
+            </motion.div>
 
-            <h2 className="mb-6 text-5xl md:text-6xl font-bold text-foreground font-ubuntu">
-              The Stuff Your Team Hates Doing.
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="mb-6 text-5xl md:text-7xl font-black text-foreground font-display leading-tight"
+            >
+              The Stuff Your Team<br />Hates Doing.
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">We Automate All of It.</span>
-            </h2>
+            </motion.h2>
 
-            <p className="text-xl text-muted-foreground max-w-3xl">
-              Support. Booking. Follow-up. Tracking. Chasing.
-              All the repetitive garbage that drains your time, AI handles it.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-xl text-muted-foreground max-w-3xl leading-relaxed"
+            >
+              Support. Booking. Follow-up. Tracking. Chasing.<br/>
+              <span className="text-foreground font-semibold">All the repetitive garbage that drains your time, AI handles it.</span>
+            </motion.p>
           </div>
 
-          <div className="grid gap-12 md:grid-cols-2 max-w-5xl">
-            <div className="space-y-6">
-              <div className="rounded-xl border border-primary/20 bg-primary/5 p-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20">
-                    <Zap className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-foreground mb-3">1. Instant Lead Detection</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Before your human team even sees the notification, our AI has already replied, qualified, and booked the lead.
-                    </p>
-                    <p className="text-primary font-semibold">You move faster than your competitors.</p>
-                  </div>
-                </div>
-              </div>
+          <div className="space-y-6 max-w-4xl">
+            {[
+              {
+                num: '1',
+                icon: Zap,
+                title: 'Instant Lead Detection',
+                desc: 'Before your human team even sees the notification, our AI has already replied, qualified, and booked the lead.',
+                highlight: 'You move faster than your competitors.'
+              },
+              {
+                num: '2',
+                icon: Clock,
+                title: 'AI Scheduling That Fills Your Calendar Automatically',
+                desc: 'No more "Does 3pm work?" No more "Let me check." AI gives your availability, books instantly, sends reminders, and kills no-shows.',
+                highlight: 'Your days are packed without lifting a finger.'
+              },
+              {
+                num: '3',
+                icon: Phone,
+                title: 'The Relentless Follow-Up Engine',
+                desc: 'Your AI calls, texts, and messages your leads with zero shame and perfect timing. It never gets tired. Never forgets. Never loses a deal.',
+                highlight: 'Revenue recovery on autopilot.'
+              },
+              {
+                num: '4',
+                icon: BarChart3,
+                title: 'Real-Time Performance View',
+                desc: 'You\'re not buying "features." You\'re buying outcomes. Know how many leads you saved, were booked, revenue recovered, and time & payroll saved.',
+                highlight: 'This is ROI you can actually see.'
+              }
+            ].map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative"
+                >
+                  <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-full" />
 
-              <div className="rounded-xl border border-primary/20 bg-primary/5 p-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20">
-                    <Clock className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-foreground mb-3">2. AI Scheduling That Fills Your Calendar Automatically</h3>
-                    <p className="text-muted-foreground mb-4">
-                      No more "Does 3pm work?" No more "Let me check." AI gives your availability, books instantly, sends reminders, and kills no-shows.
-                    </p>
-                    <p className="text-primary font-semibold">Your days are packed without lifting a finger.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-card/40 to-background/50 p-8 hover:border-primary/40 hover:from-primary/10 transition-all duration-300">
+                    <div className="flex items-start gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-primary text-white font-bold text-xl">
+                          {item.num}
+                        </div>
+                      </div>
 
-            <div className="space-y-6">
-              <div className="rounded-xl border border-primary/20 bg-primary/5 p-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-foreground mb-3">3. The Relentless Follow-Up Engine</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Your AI calls, texts, and messages your leads with zero shame and perfect timing. It never gets tired. Never forgets. Never loses a deal.
-                    </p>
-                    <p className="text-primary font-semibold">Revenue recovery on autopilot.</p>
-                  </div>
-                </div>
-              </div>
+                      <div className="flex-1 space-y-4">
+                        <div className="flex items-center gap-3">
+                          <IconComponent className="h-6 w-6 text-primary flex-shrink-0" />
+                          <h3 className="text-2xl font-bold text-foreground">{item.title}</h3>
+                        </div>
 
-              <div className="rounded-xl border border-primary/20 bg-primary/5 p-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20">
-                    <BarChart3 className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-foreground mb-3">4. Real-Time Performance View</h3>
-                    <p className="text-muted-foreground mb-4">
-                      You're not buying "features." You're buying outcomes.
-                    </p>
-                    <div className="space-y-2 text-sm text-foreground">
-                      <p>• How many leads you saved</p>
-                      <p>• How many were booked</p>
-                      <p>• How much revenue was recovered</p>
-                      <p>• How much time & payroll you saved</p>
+                        <p className="text-muted-foreground leading-relaxed text-base">
+                          {item.desc}
+                        </p>
+
+                        <div className="inline-flex items-center gap-2 pt-2">
+                          <div className="h-1 w-6 bg-primary rounded-full" />
+                          <p className="text-primary font-semibold">{item.highlight}</p>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-primary font-semibold mt-4">This is ROI you can actually see.</p>
                   </div>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              );
+            })}
           </div>
 
-          <div className="mt-12">
-            <Button variant="accent" size="lg" asChild>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <Button variant="accent" size="lg" asChild className="text-lg">
               <Link to="/pilot">Activate Your AI Team</Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
       <section className="border-y border-border/50 bg-card/30 py-20 backdrop-blur-sm md:py-32">

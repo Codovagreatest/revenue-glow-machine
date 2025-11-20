@@ -18,6 +18,7 @@ export default {
         inter: ['Inter', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
         ubuntu: ['Ubuntu', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
